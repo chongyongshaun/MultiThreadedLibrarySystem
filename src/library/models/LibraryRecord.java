@@ -13,12 +13,11 @@ public class LibraryRecord implements Serializable {
     private String studentId;                      
     private RecordStatus status;              
     private String assignedLibrarianId;
-	public LibraryRecord(String recordId, RecordType recordType, LocalDate date, String studentId, RecordStatus status,
-			String assignedLibrarianId) {
+	public LibraryRecord(RecordType recordType, String studentId) {
 		super();
 		this.recordId = UUID.randomUUID().toString(); //gen uniq id
 		this.recordType = recordType;
-		this.date = date;
+		this.date = LocalDate.now();
 		this.studentId = studentId;
 		//set initial status based on type
         if (recordType == RecordType.NEW_BOOK_ENTRY) {
@@ -63,6 +62,11 @@ public class LibraryRecord implements Serializable {
 	}
 	public void setAssignedLibrarianId(String assignedLibrarianId) {
 		this.assignedLibrarianId = assignedLibrarianId;
+	}
+	@Override
+	public String toString() {
+		return "LibraryRecord [recordId=" + recordId + ", recordType=" + recordType + ", date=" + date + ", studentId="
+				+ studentId + ", status=" + status + ", assignedLibrarianId=" + assignedLibrarianId + "]";
 	}
     
     
