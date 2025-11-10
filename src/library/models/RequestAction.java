@@ -1,5 +1,14 @@
 package library.models;
 
 public enum RequestAction {
-
+	REGISTER, 
+	LOGIN,
+	CREATE_RECORD,
+	GET_ALL_RECORDS,
+	ASSIGN_RECORD,
+	GET_ASSIGNED_RECORDS,
+	UPDATE_PASSWORD,
+	GET_ALL_USERS,
+	LOGOUT,
+	EXIT
 }
