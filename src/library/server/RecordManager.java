@@ -15,7 +15,7 @@ import library.utils.FileUtil;
 public class RecordManager {
 	private final Map<String, LibraryRecord> recordsById; //key:val = id : record
     private final String persistPath; //file path to persist records
-	public RecordManager(Map<String, LibraryRecord> recordsById, String persistPath) {
+	public RecordManager(String persistPath) {
 		super();
 		this.recordsById = new ConcurrentHashMap<String, LibraryRecord>();
 		this.persistPath = persistPath;
